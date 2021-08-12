@@ -9,7 +9,9 @@ Author URI: https://github.com/rlewkowicz
 */
 
 function livereload_snippet_enqueue_js() {
-    wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
+    $url = home_url( );
+
+    wp_register_script('livereload', $url . ':35729/livereload.js?snipver=1', null, false, true);
     wp_enqueue_script('livereload');
 }
 
